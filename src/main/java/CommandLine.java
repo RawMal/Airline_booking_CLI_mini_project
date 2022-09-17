@@ -5,13 +5,13 @@ public class CommandLine {
 
     private ArrayList<Flight> listOfFlights;
 
-    private ArrayList<Passenger> passengerRepo;
+    private ArrayList<Passenger> passengerDb;
 
     private boolean isOperational;
 
     public CommandLine() {
         this.listOfFlights = new ArrayList<>();
-        this.passengerRepo = new ArrayList<>();
+        this.passengerDb = new ArrayList<>();
         this.isOperational = true;
     }
 
@@ -36,5 +36,21 @@ public class CommandLine {
         }
     }
 
-    
+    public void addPassenger() {
+        System.out.println("Add name of Passenger:");
+        Scanner inputScanner = new Scanner(System.in);
+        String name = inputScanner.nextLine();
+        System.out.println("Add Passenger's contact number: ");
+        Scanner contactScanner = new Scanner(System.in);
+        String contactNumber = contactScanner.nextLine();
+        Passenger newPassenger = new Passenger(name, contactNumber);
+        addPassengerToList(newPassenger);
+        System.out.println("Passenger added!");
+    }
+
+    public void addPassengerToList(Passenger passenger){
+        passengerDb.add(passenger);
+    }
+
+
 }
