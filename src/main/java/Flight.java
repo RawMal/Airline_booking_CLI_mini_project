@@ -6,9 +6,9 @@ public class Flight {
     private ArrayList<Passenger> passengersOnTheFlight;
     private boolean isCancelled;
 
-    public Flight (String destination, int flightId){
+    public Flight (String destination){
         this.destination = destination;
-        this.flightId = flightId;
+        this.flightId = 0;
         this.passengersOnTheFlight = new ArrayList<>();
         this.isCancelled = false;
     }

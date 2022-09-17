@@ -4,10 +4,10 @@ public class Passenger {
     String contactNumber;
     int passengerID;
 
-    public Passenger(String name, String contactNumber, int passengerID){
+    public Passenger(String name, String contactNumber){
         this.name = name;
         this.contactNumber = contactNumber;
-        this.passengerID = passengerID;
+        this.passengerID = 0;
     }
 
     public int getPassengerID() {
