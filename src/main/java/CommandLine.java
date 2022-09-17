@@ -27,4 +27,14 @@ public class CommandLine {
     public void addFlight(Flight flight) {
         listOfFlights.add(flight);
     }
+
+
+    public void displayFlight(){
+        System.out.println("record of confirmed flights: ");
+        for (Flight flight : listOfFlights) {
+            System.out.println(flight);
+        }
+    }
+
+    
 }
