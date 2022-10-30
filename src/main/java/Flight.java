@@ -1,20 +1,23 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Flight {
+
     private String destination;
     private int flightId;
-    private ArrayList<Passenger> passengersOnTheFlight;
+    private ArrayList<Passenger> passengersOnFlight;
     private boolean isCancelled;
 
     public Flight (String destination){
         this.destination = destination;
-        this.flightId = 0;
-        this.passengersOnTheFlight = new ArrayList<>();
+        Random rand = new Random();
+        this.flightId = rand.nextInt(10000);
+        this.passengersOnFlight = new ArrayList<>();
         this.isCancelled = false;
     }
 
-    public void addPassengerToFlight(Passenger passenger){ // Adds a passenger to the arraylist in passenger class
-        passengersOnTheFlight.add(passenger);
+    public void addPassengerToFlight(Passenger passenger){
+        passengersOnFlight.add(passenger); // adds passenger to arraylist from passenger class
     }
 
     public String getDestination() {
@@ -33,12 +36,17 @@ public class Flight {
         this.flightId = flightId;
     }
 
-    public ArrayList<Passenger> getPassengersOnTheFlight() {
-        return passengersOnTheFlight;
+    public ArrayList<Passenger> getPassengersOnFlight() {
+        return passengersOnFlight;
     }
 
-    public void setPassengersOnTheFlight(ArrayList<Passenger> passengersOnTheFlight) {
-        this.passengersOnTheFlight = passengersOnTheFlight;
+    public void setPassengersOnFlight(ArrayList<Passenger> passengersOnFlight) {
+        this.passengersOnFlight = passengersOnFlight;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight ID: " + flightId + "   " + "Destination: " + destination + "   " + "Cancelled: " + isCancelled;
     }
 
     public boolean isCancelled() {
